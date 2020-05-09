@@ -1,388 +1,358 @@
 <!DOCTYPE html>
-
-<!-- これをjaに変更するとどうなるのか
-…特に変化はなかった -->
 <html lang="ja">
 <head>
 
-	<!-- UTF-8もなくても影響なかった -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>funny.com</title>
-	<!-- Bootstrap4の公式と比較するとjQueryのところだけ違いあったが、
-	公式版のものに変更しても動作に影響はなかった 
-	更に、srcのintegretyは意味がわからない
-	-->
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet">
-
-<style>
-body {
-background-image: url("<?php echo get_template_directory_uri(); ?>/img/mac.png");
-background-attachment: fixed;
-background-size: cover;
-  background-position: center center;
-
-}
-</style>
-
 </head>
-
-
 
 <body>
 
-
 <!-- Navigation -->
-
-<!-- スペースで複数クラスを付与するmdは、スマホサイズから大きくなった場合の指定 bg-lightはナビの色指定
-stiky-topはナビを上に固定
-・・・上に固定ってどういう意味？-->
-
-<!-- これがナビバーの基本形：詳しくは公式参照 -->
-<!-- https://getbootstrap.com/docs/4.3/components/navbar/ -->
-<!-- 
-navbar-expand-md：mdよりも広くなった場合にナビバーが出現
-navbar-light bg-lightは背景白で、文字色グレー
-sticky-topが有効ではない：ブラウザのせい？
-fixed-topにすると確実に上部に固定だが、Floatになり画像とかぶるのが問題
--->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-
-<!-- 
-container-fluid： グリッドシステム使う時の基本形：このクラス以下の要素がいい感じに分割される
-navbar-brand：特に必要な感じじゃないが
-class="navbar-toggler：
-data-targetで指定したIDの要素を消したり出したりする、同じIDであれば同時に開閉する
-navbar-toggler-icon：ただのアイコン
-collapse:非表示
-navbar-collapse：Navbarのコンテンツ部分を.navbar-expand-xxと連携して非表示にする
-https://homupedia.com/bootstrap4-navbar.html
-ml-auto:margin lightの略：これはいいが、なぜナビバーボタンが右寄りなのかが解せない
-class：activeは複数あるものを選択状態にしたい場合に使う
-
--->
-<div class="container-fluid">
-	<a class="navbar-brand" href="#"><img class="funny" src="<?php echo get_template_directory_uri(); ?>/img/funnylogo.png" alt=""></a>
-	<!-- <a class="navbar-brand" href="#"><i class="fab fa-accusoft"></i></a> -->
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-	data-target="#navbarResponsive">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item  active">
-				<a class="nav-link"  href="#">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#about">About</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#service">Services</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#team">Team</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#connect">Connect</a>
-			</li>
-
-
-		</ul>
-
-
+<nav id="navigation" class="navbar navbar-expand-md navbar-light bg-light sticky-top "style=background-color:#e3f2fd;>
+	<!--メニュー-->
+	<div class="container-fluid">
+		<a class="navbar-brand p-0" href="#"><img class="Icon" src="<?php echo get_template_directory_uri(); ?>/img/icon.png" alt=""></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="current-item collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link"  href="#home">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#skill_all">Skill</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#works">Works</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#profile">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contact">Contact</a>
+				</li>
+			</ul>
+		</div>
 	</div>
-
-
-
-</div>
 </nav>
 
+<!--top画像-->
 
-<!--- Image Slider -->
+<div id="home">
+	<div class="Top">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/back.png" alt="">
+		<div class="Top-info">
+		<h1><span class="bound1">R</span><span class="bound2">a</span><span class="bound3">u</span><span class="bound4">m</span></h1>
+			<h3>Web Creator</h3>
+		</div>
+		<div class="str1"><i class="fas fa-star"></i></div>
+		<div class="str2"><i class="fas fa-star"></i></div>
+		<div class="str3"><i class="fas fa-star"></i></div>
+		<div class="str4"><i class="fas fa-star"></i></div>
+		<div class="str5"><i class="fas fa-star"></i></div>
+	</div>
+</div>
 
-<!-- 
-data-ride="carousel：これの記述によって、読み込み順にスライドが開始される	
- -->
-<div id="slides" class="carousel slide" data-ride="carousel">
+<!-- info -->
 
-<!-- 
-おそらくjQueryの記述だと思う 
-data-target：同じページで複数のスライダーが存在する場合、この記述が必要
-また、どれかをclass：activeにしないとスライダーが表示されない
--->
-<ul class="carousel-indicators">
-	<li data-target="#slides" data-slide-to="0" class="active"></li>
-	<li data-target="#slides" data-slide-to="1"></li>
-	<li data-target="#slides" data-slide-to="2"></li>
-</ul>
-<div class="carousel-inner">
-	<div class="carousel-item active">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/back5.jpg" alt="">
-		<div class="carousel-caption">
-			<h1 class="display-2">funny.com</h1>
-			<h3 class="display-2">We are borderless engineers</h3>
-			<button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button>
-			<button type="button" class="btn btn-primary btn-lg">Get Started</button>
+<div class="bg-white m-3 text-center info">
+	<div>
+		<h2 class="my-3" >成果と見た目にこだわったWebサイト</h2>
+		<p>デザインからコーディングまで全てお任せください</p>
+	</div>
+	<a href="#contact">
+		<button type="button" class="btn my-3 btn1">お問い合わせ</button>
+	</a>
+	</div>
+</a>
+
+<!--- できること -->
+
+<div class="row text-center cando my-5">
+	<div class="text1 m-auto ">
+		<h3 class="mt-2 mb-5 text-center"><span>Reum</span>  ならこんな課題を解決します</h3>
+		<div class="px-3 text-left">
+			<p><i class="far fa-check-square mx-1"></i>分かりやすいLPの作成を作成したい</p>
+			<p><i class="far fa-check-square mx-1"></i>デザインからコーディングまで任せたい</p>
+			<p><i class="far fa-check-square mx-1"></i>社内のプログラマーが足りない</p>
 		</div>
 	</div>
-	<div class="carousel-item">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/back6.jpg" alt="">
-	</div>
-	<div class="carousel-item">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/back3.jpg" alt="">
-	</div>
-</div>
 </div>
 
-<!--- Jumbotron -->
-<!-- https://tonari-it.com/bootstrap-jumbotron/ 
-h1,pタグをいい感じに調整してくれるやつ-->
-<div id="about" class="container-fluid">
-<div class="row jumbotron">
-	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xm-10">
-		<p class="lead">This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen </p>
-	</div>
-	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xm-2">
-		<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Web Hosting</button></a>
-	</div>
 
-</div>
-</div>
+<!-- About -->
 
-<!--- Welcome Section -->
-<div id="service" class="container-fluid padding">
-<div class="row welcome text-center">
-	<div class="col-12">
-		<h1 class="display-4">Built with ease.</h1>
-	</div>
-	<hr>
-	<div class="col-12">
-		<p class="lead">This is a pen This is a pen This is a pen This is a pen This is a pen This is a pen</p>
-	</div>
-</div>
-</div>
-
-<!--- Three Column Section -->
-<div class="container-fluid padding">
-<div class="row text-center padding">
-	<div class="col-xs-12 col-sm-6 col-md-4">
-		<i class="fas fa-code"></i>
-		<h3>HTML5</h3>
-		<p>Built with the latest version of HTML, HTML5.</p>
-	</div>
-	<div class="col-xs-12 col-sm-6 col-md-4">
-		<i class="fas fa-bold"></i>
-		<h3>BOOTSTRAP</h3>
-		<p>Built with the latest version of Bootstrap, Bootstrap 4.</p>
-	</div>
-	<div class="col-sm-12 col-md-4">
-		<i class="fab fa-css3"></i>
-		<h3>CSS3</h3>
-		<p>Built with the latest version of CSS, CSS3.</p>
-	</div>
-<div>
-	<hr class="my-4">
-</div>
-
-</div>
-</div>
-
-<!--- Two Column Section -->
-<div class="container-fluid padding">
-<div class="row padding">
-	<div class="col-md-12 col-lg-6">
-		<h2>If you build it...</h2>
-		<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-		<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-		<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-		<br>
-		<a href="#" class="btn btn-primary">Learn More</a>
-	</div>
-	<div class="col-lg-6">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/desk.jpg" class="img-fluid">
-	</div>
-</div>
-</div>
-
-<hr class="my-4">
-
-<!--- Fixed background -->
-<figure>
-	<!-- これは、指定の画像なのか？またはBootstrapで準備された画像なのか？ -->
-	<div class="fixed-wrap">
-		<div id="fixed">
+<section id="about">
+	<div class="about text-center my-5 mx-0">
+		<div>
+			<h3 class="text-md-left">About</h3>
 		</div>
-	</div>
-</figure>
-
-<!--- Emoji Section -->
-<button class="fun" data-toggle="collapse" data-target="#emoji">Click for fun	
-</button>
-<div id="emoji" class="collapse">
-<div class="container-fluid padding">
-<div class="row text-center">
-	<div class="col-sm-6 col-md-3">
-		<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/1.gif">
-	</div>
-	<div class="col-sm-6 col-md-3">
-			<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/2.gif">
-	</div>
-	<div class="col-sm-6 col-md-3">
-			<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/3.gif">
-	</div>
-	<div class="col-sm-6 col-md-3">
-			<img class="gif" src="<?php echo get_template_directory_uri(); ?>/img/4.gif">
-	</div>
-
-</div>
-</div>
-</div>
-
-
-<!--- Meet the team -->
-<div id="team" class="container-fluid padding">
-<div class="row welcome text-center">
-	<div class="col-12">
-		<h1 class="display-4">Meet the Team</h1>
-	</div>
-	<hr>
-</div>
-</div>
-
-<!--- Cards -->
-<div class="container-fluid padding">
-<div class="row padding">
-	<div class="col-md-4">
-		<div class="card">
-			<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/team4.jpg">
-			<div class="card-body">
-				<h4 class="card-title">John Doe</h4>
-				<p class="card-text">John is a super web designer </p>
-				<a href="#" class="btn btn-outline-secondary">See Profile</a>
+		<div class="about-con">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/PC.png" alt="About" class="img-fluid">
+			<div class="about_text m-auto text1 text-lg-left">
+				<p>サイト設計からコーディングまで対応しています。</p>
+				<p>強みは広告運用の経験よりサイトの訪問者の反応がいいLPの設計、デザインが可能なこと。
+				</p>
+				<p>お客様がお持ちの大切な価値を利用者にわかりやすく伝えることを第一とし、<br>
+					「シンプル・見やすい・分かりやすい・伝わる」Webデザインにて設計します。</p>
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
-			<div class="card">
-				<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/team2.jpg">
-				<div class="card-body">
-					<h4 class="card-title">Dee Jo</h4>
-					<p class="card-text">Dee is an adhesive recruiter</p>
-					<a href="#" class="btn btn-outline-secondary">See Profile</a>
-				</div>
+</section>
+
+
+<!-- スキル -->
+
+<section id="skill_all">
+	<div class="skills_contents">
+		<div class="text-md-left">
+			<h3>Skill</h3>
+		</div>
+		<!-- スキル全体 -->
+		<div class="skills text-center">
+		<!-- html -->
+		<div class="skill_card">
+			<div class="skill_icon">
+			<i class="fab fa-html5"></i>
+			</div>
+			<div class="skill_name">
+			<h2>HTML5</h2>
 			</div>
 		</div>
-		<div class="col-md-4">
-				<div class="card">
-					<img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/img/team3.jpg">
-					<div class="card-body">
-						<h4 class="card-title">Phil Ho</h4>
-						<p class="card-text">Phil is a genius engineer</p>
-						<a href="#" class="btn btn-outline-secondary">See Profile</a>
+		<!-- css -->
+		<div class="skill_card">
+			<div class="skill_icon">
+				<i class="fab fa-css3"></i>
+			</div>
+			<div class="skill_name">
+			<h2>CSS3</h2>
+			</div>
+		</div>
+		<!-- ブートストラップ  -->
+		<div class="skill_card">
+			<div class="skill_icon">
+				<i class="fab fa-bootstrap"></i>
+			</div>
+			<div class="skill_name">
+			<h2>Bootstrap4</h2>
+			</div>
+		</div> 
+		<!-- Javascript -->
+		<div class="skill_card">
+			<div class="skill_icon">
+			<i class="fab fa-js-square"></i>
+			</div>
+			<div class="skill_name">
+			<h2>JavaScript</h2>
+			</div>
+		</div> 
+		<!-- jQuery -->
+		<div class="skill_card">
+			<div class="skill_icon">
+				<i class="fab fa-node-js"></i>
+			</div>
+			<div class="skill_name">
+			<h2>jQuery</h2>
+			</div>
+		</div> 
+		<!-- php -->
+		<div class="skill_card">
+			<div class="skill_icon">
+			<i class="fab fa-php"></i>
+			</div>
+			<div class="skill_name">
+			<h2>PHP</h2>
+			</div>
+		</div> 
+		<!-- Wordpress -->
+		<div class="skill_card">
+			<div class="skill_icon">
+			<i class="fab fa-wordpress"></i>
+			</div>
+			<div class="skill_name">
+			<h2>WordPress</h2>
+			</div>
+		</div> 
+		<div class="skill_card">
+			<div class="skill_icon">
+			<i class="fab fa-github"></i>
+			</div>
+			<div class="skill_name">
+			<h2>GitHub</h2>
+			</div>
+		</div> 
+		</div>
+  	</div>
+</section> 
+
+<!-- 制作実績 -->
+<section id="works">
+	<div class="works text-center">
+		<div>
+			<h3 class="text-md-left">Works</h3>
+		</div>
+	</div>
+</section>
+
+
+<!-- profile -->
+<section id="profile">
+	<div class="profile text-center">
+		<div>
+			<h3 class="text-md-left">profile</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 text-center">
+			<div class="prof_pic">
+				<img  src="<?php echo get_template_directory_uri(); ?>/img/pro2.JPG" width="200px" height="210px">
+			</div> <!-- prof_pic -->
+			<div class="prof_info text-center">
+				<p class="prof_name"> 佐伯　真</p>
+				<P class="prof_name2"> (Saeki Shin)</p>
+				<p class="prof-cont">
+					京都大学卒業後、経理の仕事を行うが、webコーディングの魅力・奥深さにひかれ、webエンジニアに転身。
+					趣味は筋トレと読書。
+				</p>
+			</div>
+		</div>
+
+		<div class="col-md-6 text-center">
+			<div class="prof_pic">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/pro1.JPG" width="200px" height="210px">
+			</div> <!-- prof_pic -->
+			<div class="prof_info">
+				<p class="prof_name"> 吉田　幸世</p>
+				<P class="prof_name2"> (Yoshida Sachiyo)</p>
+				<p class="prof-cont">
+					大学院でプログラミングを勉強し、その後エンジニアとしてメーカーに３年勤務。広告運用の経験を生かし、お客様とエンドユーザー様の双方にとってより使いやすくわかりやすいサイト作りを心がけています。
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--お問い合わせ-->
+<section id="contact">
+	<div class="contact_content">
+		<div class="contact text-center">
+			<div>
+				<h3 class="text-md-left">Contact</h3>
+			</div>
+		</div>
+		<div class="contact_info py-5">
+			<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe0V8KauHdy95ioQUBa5zQBNK7trooGn6p6vjsNVMYdjw1mFw/formResponse" target="_self" method="POST" id="mG61Hd">
+				<div class="text-center">
+					<p>お見積もりや案件依頼などお気軽にお問い合わせください。</p>
+					<div class="contact_item">
+						<label>お名前<span>(必須)</span></label>
+						<br>
+						<input class="contact_inp" type="text" name="entry.271032105" placeholder="例）山田太郎" value="">
 					</div>
+					<div class="contact_item">
+						<label>メールアドレス<span>(必須)</span></label>
+						<br>
+						<input class="contact_inp" type="text" name="entry.1075848321" placeholder="例）guest@example.com" value="">
+					</div>
+					<div class="contact_item">
+						<label>お問い合わせ項目<span>(必須)</span></label>
+						<br>
+						<select class="contact_inp" name="entry.1003904052" placeholder="お問い合わせ内容を選択する" >
+							<option value="LP、Web制作の相談">LP、Web制作の相談</option>
+							<option value="外部パートナーの依頼">外部パートナーの依頼</option>
+							<option value="その他">その他</option>
+						</select>
+					</div>
+					<div class="contact_item">
+						<label>お問い合わせ内容<span>(必須)</span></label>
+						<br>
+						<textarea class="contact_inp contact_detail" name="entry.958808251" rows="5" placeholder="お問合せ内容を入力"></textarea>
+					</div>
+					<button class="btn submit_btn" type="submit">送信</button>
 				</div>
-			</div>
-</div>
-</div>
-
-<!--- Two Column Section -->
-<div class="container-fluid padding">
-		<div class="row padding">
-			<div class="col-lg-6">
-				<h2>Our Philosophy</h2>
-				<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-				<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-				<p>This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple This is an apple </p>
-				<br>
-			</div>
-			<div class="col-lg-6">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/back4.jpg" alt="何か間違えています" class="img-fluid">
-			</div>
+			</form>
 		</div>
-		<hr class="my-4">
-		</div>
+	</div>
+<section>
 
-<!--- Connect -->
-<div id="connect" class="container-fluid padding">
-<div class="row text-center padding">
-	<div class="col-12">
-		<h2>Connect</h2>
-	</div>
-	<div class="col-12 social padding">
-		<a href="#"><i class="fab fa-facebook"></i></a>
-		<a href="#"><i class="fab fa-twitter"></i></a>
-		<a href="#"><i class="fab fa-google-plus-g"></i></a>
-		<a href="#"><i class="fab fa-instagram"></i></a>
-		<a href="#"><i class="fab fa-youtube"></i></a>
-	</div>
-</div>
-</div>
+<section>
+	<a href="#contact">
+		<button type="button" class="nav_btn  btn my-3 btn1">お問い合わせ</button>
+	</a>
+</section>
+
 
 <!--- Footer -->
 <footer>
-<div class="container-fluid padding">
-<div class="row text-center">
-	<div class="col-md-4">
-		<!-- <img src="img/w3newbie.png"> -->
-		<i class="fab fa-accusoft"></i>
-		<hr class="light">
-		<P>000-000-0000</P>
-		<p>aaaaa@gmail.com</p>
-		<p>300 Street Name</p>
-		<p>City, State, 99999</p>
+	<div class="container-fluid p-0">
+		<div class="row text-center">
+			<div class="col-12">
+				<hr class="light">
+				<h5>&copy; funny.com</h5>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-4">
-		<hr class="light">
-		<h5>Our hours</h5>
-		<hr class="light">
-		<p>Monday: 9am - 5pm</p>
-		<p>Saturday: 10am - 4pm</p>
-		<p>Sunday: closed</p>
-	</div>
-	<div class="col-md-4">
-			<hr class="light">
-			<h5>Our hours</h5>
-			<hr class="light">
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-			<p>City, State, 99999</p>
-	</div>
-	<div class="col-12">
-		<hr class="light">
-		<h5>&copy; funny.com</h5>
-	</div>
-</div>
-</div>
-
-
 </footer>
 
 
+<script>
+	'use strict';
 
+	var j$ = jQuery,
+    $nav = j$("#navigation"),
+    $slideLine = j$("#slide"),
+    $currentItem = j$(".current-item");
 
+	j$(function(){  
+		// Menu has active item
+		if ($currentItem[0]) {
+			$slideLine.css({
+			"width": $currentItem.width(),
+			"left": $currentItem.position().left
+		});
+	}
+	
+	// Underline transition
+	j$($nav).find("li").hover(
+		// Hover on
+		function(){
+		$slideLine.css({
+			"width": j$(this).width(),
+			"left": j$(this).position().left
+		});
+		},
+		// Hover out
+		function(){
+		if ($currentItem[0]) {
+			// Go back to current
+			$slideLine.css({
+			"width": $currentItem.width(),
+			"left": $currentItem.position().left
+			});
+		} else {
+			// Disapear
+			$slideLine.width(0);
+		}
+		}
+	);
+});
 
-
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!--- Check out my course on Udemy! -->
-<!-- <div class="udemy-course" style="position: fixed; bottom: 0; right: 0; margin-bottom: -5px; z-index: 100;">
-	<a href="http://bit.ly/advanced-bootstrap-course" target="_blank" style="z-index: 999!important; cursor: pointer!important;"><img src="https://www.w3newbie.com/wp-content/uploads/nuno-udemy-banner.png" style="max-width: 100%; min-width: 100%;"></a>
-</div> -->
 
 

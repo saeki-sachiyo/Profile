@@ -12,17 +12,38 @@ version： 1.0.0
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
 /*共通部分*/
-html, body {
-  height: 100px;
-  width: 100%;
+html {
+  overflow: auto;
+  overflow-x: hidden;
+	height: 100px;
+  max-width: 100%;
   font-family: 'Poppins', sans-serif;
-  color: #222;
+  color:  rgb(224, 0, 0);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+/*改行*/
+.add_line{
+  display:none;
+}
+
+
+@media screen and (max-width: 650px){	
+  .br-pc { display:none; }
+  .br-sp { display:block; }
 }
 
 /*サブタイトルのスタイル*/
-.about h3 ,.skills_contents h3, .works h3, .profile h3, .contact h3{
+.about h3 ,.skills_contents h3, .works h3,.contact h3{
   font-size: 500%;
-  color: #c8f4ff;
+  color: #ffffff;
   margin: 0;
   position: relative;
   top: 30px;
@@ -30,11 +51,24 @@ html, body {
   -webkit-text-stroke: 2px rgb(41, 41, 41);
 }
 
-/*各項目の余白設定*/
-#about ,#skill_all, #works ,#profile{
-  margin: 5%;
-  margin-top: 10%;
+/*Hover設定*/
+.btn1:hover, .works_info img:hover, .nav_btn:hover{
+  opacity: 0.6;
+  cursor: pointer;
 }
+
+/*スクロール*/
+.fadein {
+	opacity : 0.1;
+	transform : translate(0, 80px);
+	transition : all 1500ms;
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+  }
 
 
 /* アニメーション*/
@@ -67,6 +101,8 @@ html, body {
 /* navbar全体に余白設定 */
 .navbar {
   padding: .8rem;
+  width: 100%;
+  position: fixed;
 }
 
 #header #gnav li a.current {
@@ -88,24 +124,15 @@ html, body {
   font-size: 1.1em !important;
 }
 
-#navigation{
-  position: fixed;
-  width: 100%;
-}
-
-#nav_border{
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  background-color:#75C2FF;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+.menu_line{
+  border-bottom: 3px solid #3b3b3b;
 }
 
 /*Top画像のスタイル*/
 /*Top*/
-
-
+.Top{
+  overflow: hidden;
+}
 .Top img {
   position: relative;
   width: 100%;
@@ -117,7 +144,7 @@ html, body {
   font-family: 'Courier', monospace ,sans-serif;
   font-weight: bold;
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   margin:0;
@@ -163,9 +190,15 @@ span{
 }
  
 /*星のアニメーション*/
+.Top{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .str1{
   position: absolute;
-  top:-3%;
+  top:-5%;
   color:rgb(255, 241, 38);
   font-size: 13px;
   animation: star-style 5s infinite;
@@ -176,7 +209,7 @@ span{
 .str2{
   position: absolute;
   top:10%;
-  left: -3%;
+  left: -5%;
   color:rgb(255, 241, 38);
   font-size: 8px;
   animation: star-style 5s infinite;
@@ -185,7 +218,7 @@ span{
 
 .str3{
   position: absolute;
-  top:-3%;
+  top:-5%;
   color:rgb(255, 241, 38);
   font-size: 8px;
   left: 40%;
@@ -196,7 +229,7 @@ span{
 
 .str4{
   position: absolute;
-  top:-3%;
+  top:-5%;
   left: 40%;
   color:rgb(255, 241, 38);
   font-size: 12px;
@@ -207,7 +240,7 @@ span{
 
 .str5{
   position: absolute;
-  top:-3%;
+  top:-5%;
   left: 50%;
   color:rgb(255, 241, 38);
   font-size: 8px;
@@ -215,7 +248,7 @@ span{
   animation-delay: 3s;
 }
 
-/* ボタンスタイル */
+/* お問い合わせボタンスタイル */
 .btn1 {
   background-color: #6193ff;
   width: 200px;
@@ -247,41 +280,107 @@ span{
 }
 
 
-
 /* About */
 .cando p ,.about .text1{
   font-size:18px;
 }
 
-.about-con{
-  display: flex;
-  height: 150%;
+	.about-con{
+	  display: flex;
+	  height: 150%;
+	}
+
+	.about{
+  		padding: 3%;
+		padding-bottom:0;
+		position: relative;
+		 z-index: 7;
+	}
+
+ 	.info{
+	  background-color:rgb(236, 252, 253);
+	  position: relative;
+	  margin-bottom: 3%;
+	}
+
+	.about_right img{
+	  width: 100%;
+	}
+
+	.about_txt{
+	  position: absolute;
+	  left: 180px;
+	  top:50%;
+		width:100%;
+	  margin: auto;
+	  padding:3%;
+		padding-top:6%;
+		padding-bottom:6%;
+		width:500px;
+	  background-color:#fff;
+		opacity:0.85;
+	  -webkit-transform : translateY(-50%);
+	  transform : translateY(-50%);
+	  z-index: 5;
+	}
+
+/*Merit*/
+#Merit{
+  margin: 5%;
+  margin-top: 8%;
 }
 
-.about{
-  margin: 3%;
+.merit h3{
+  font-size: 500%;
+  color: #ffffff;
+  margin: 0;
+  -webkit-text-stroke: 2px rgb(41, 41, 41);
 }
 
-.about img{
-  width: 40%;
-  height: 70%;
+.merit_cont{
+  margin-top: 50px;
   position: relative;
-  z-index: 5;
+  z-index: 3;
 }
 
-.about_text{
-  background-color: #001d5c;
-  color: azure;
-  height: 200%;
-  width: 220%;
-  padding: 6% 2% 6% 6%;
-  position: relative;
-  left:-40px;
-  top:60px;
-  box-shadow:5px 5px 5px  black;
+.merit h4{
+  border-bottom:solid 5px #b8e3ff;
+  width: 60%;
+  margin:auto;
 }
+
+.num{
+  position: absolute;
+  left: 20%;
+  top:-50px;
+  font-size: 200px;
+  opacity: 0.2;
+  z-index: 1;
+  color: rgb(147, 224, 255);
+  text-shadow: 3px 3px 3px #3f3f3f;
+}
+
+.fa-calendar-alt ,.fa-clipboard, .fa-comments{
+  font-size: 300%;
+  color: #4b4b4b;
+  margin: 0 5%;
+}
+
+/*サブタイトル強調*/
+.emphasis{
+  font-size: 150%;
+  color: coral;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px #3b3b3b;
+}
+
 
 /* スキル */
+#skill_all{
+  margin: 5%;
+  margin-top: 8%;
+}
+
 .skills_contents {
   width: 100%;
   height: 100%;
@@ -296,12 +395,13 @@ span{
 }
 
 .skill_card {
-  width: calc((100% - 100px) / 5);
-  height: calc((100% - 100px) / 5);
+  width: calc((100% - 3%) / 5);
+  height: calc((100% - 3%) / 5);
   padding: 30px 0;
   border: 2px solid  #003bb9;
+  background-color: white;
   border-radius: 30px;
-  margin: 0px 20px 20px;
+  margin: 0px 5px 20px;
 }
 
 .skill_icon {
@@ -313,33 +413,97 @@ span{
   font-size: 15px;
 }
 
+/*works*/
+.works{
+  margin: 0% 5%;
+}
+
+#works {
+  position: relative;
+  overflow: hidden;
+}
+
+.works_info:before {
+  content: '';
+  position: absolute;
+  top:80px;
+  left: 0;
+  width: 130%;
+  height: 90%;
+  margin: 3% -10% 0;
+  background:  #b8e3ff;
+  transform-origin: top;
+  transform: rotate(3deg);
+  z-index: -1;
+}
+
+.works_info:after {
+  content: '';
+  position: absolute;
+  top:80px;
+  left: -20px;
+  width: 130%;
+  height: 90%;
+  margin: 3% -10% 0;
+  background:  #003bb9;
+  transform-origin: top;
+  transform: rotate(-3deg);
+  z-index: -2;
+  overflow: hidden;
+}
+.works_info img{
+  width: 80%;
+  height: auto;
+}
+
+.works_info{
+  margin-bottom: 15%;
+}
+
+.works_info a{
+ 	text-decoration:none;	
+}
+
+.link{
+	color: black;
+	border-bottom: 1px solid black;
+}
 
 /* profile */
-.prof_pic{
-  position: relative;
-  z-index: 3;
-  margin: 60px auto 0;
+#profile{
+  margin-bottom: 5%;
+  margin-top: 8%;
 }
 
-.prof_info {
-  color: white;
-  margin: 0 8%;
-  position: relative;
-  top: -30px;
-  padding:30px 30px;
-  background-color: #111e63;
-  box-shadow: 10px 10px 5px #696969;
-  z-index: 1;
+.profile_shin_cot, .profile_sachi_cot{
+	width:65%;
+	margin-left:auto;
+	margin-right:auto;
 }
 
-.prof_name{
-  font-size: 25px;
-  padding-bottom: 0;
-  margin: 0;
+.prof_info{
+	margin:auto;
 }
 
-.prof_name2{
-  font-family: 'Courier', monospace;
+.profile_ttl h3{
+  font-size: 500%;
+  color: #ffffff;
+  margin-left:5%;
+  -webkit-text-stroke: 2px rgb(41, 41, 41);
+	position:relative;
+	top:40px
+}
+
+.profile_shin{
+	background-color:rgb(236, 242, 253);
+}
+
+.profile_sachi{
+	background-color:rgb(236, 252, 253);
+}
+
+.profile img{
+	border-radius:50%;
 }
 
 /* Contanct */
@@ -383,32 +547,28 @@ span{
 }
 
 /*右下にあるボタン*/
-.nav_btn{
-  height: 60px;
-  width: 150px;
+.nav_btn a{
+  height: 50px;
+  width: 50px;
   position:fixed;
-  right:10px;
-  bottom:0px;
+  right:15px;
+  bottom:30px;
   transition:1s;
   opacity:0.7;
-  cursor: pointer;
-  background-color:#6193ff;
-  color: black;
+  color:#6193ff;
+  font-size: 300%;
 }
 
 footer {
   background-color: #3f3f3f;
   color: #d5d5d5;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 /*---Media Queries --*/
 
 /*ミディアムサイズ*/
 @media (max-width: 768px) {
-  .Top-info {
-    top: 20%;
-  }
   .Top-info h1{
     font-size: 600%;
   }
@@ -417,27 +577,31 @@ footer {
     font-size: 200%;
   }
 
-  /*Aboutのスタイル（縦に配置)*/
-  .about-con{
-    display: inline-block;
-  }
-  
-  .about img{
-    height: auto;
-    width: 80%;
-  }
-  
-  .about_text{
+	/*about*/
+	.about_right img{
+		width:170%;
+	}
+
+	.about_txt {
+	  left: 5%;
     width: 90%;
-    padding: 80px 20px 20px 20px;
-    position: relative;
-    top:-50px;
-    left:0px;
+    padding: 5px;
+		opacity:0.7;
+	}	
+
+  /*merit*/
+  .num{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -50px;
+    bottom :0;
+    margin:  auto;
   }
 
   /* スキル幅変える */
   .skill_card {
-    width: calc((100% - 100px) / 2);
+    width: calc((100% - 7%) / 2);
   }
 
   /* Contact */
@@ -453,16 +617,20 @@ footer {
 
 /*スモールサイズ*/
 @media (max-width: 576px) {
+  /*改行*/
+  .add_line{
+    display:block;
+  }
 
   /*Top*/
   .Top img{
     height: 300px;
-    width: auto;
+    width: 100%;
   }
 
   /*Top画像の上の文字*/
   .Top-info {
-    top: 20%;
+    top: 50%;
   }
   .Top-info h1{
     font-size: 400%;
@@ -472,8 +640,8 @@ footer {
     font-size: 100%;
   }
 
-/*星アニメーション*/
-@keyframes star-style {
+  /*星アニメーション*/
+  @keyframes star-style {
     0%{transform:none}
     100%{transform:translate(250px , 150px); opacity:0%;}
   }
@@ -486,22 +654,75 @@ footer {
   .info p{
     font-size:100%;
   }
-
+	
   /*できること*/
+  .cando .text1{
+    width: 100%;
+  }
   .cando h3{
     font-size:130%;
   }
   .cando p,.about .text1{
     font-size:100%;
   }
+  /*merit*/
+  .merit h4{
+    width: 90%;
+  }
 
+  /*Skill*/
+  .skill_card {
+    width: calc((100% - 8%) / 2);
+  }
+
+  /*Work*/
+  .works_info img{
+    width: 100%;
+  }
+
+  /* Contact */
+  .contact{
+    margin-left:0;
+  }
+
+  .contact_inp{
+    width: 90%;
+  }
+
+
+	/*右下にあるボタン*/
+	.nav_btn a{
+	  right:30px;
+	}
+}
+
+_:-ms-lang(x)::-ms-backdrop, .about h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .merit h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .skills_contents h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .works h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .profile h3 {
+	color:   rgb(102, 102, 102);
 }
 
 
+_:-ms-lang(x)::-ms-backdrop, .contact h3 {
+	color:   rgb(102, 102, 102);
+}
 
 
-
-
-
-
+_:-ms-lang(x)::-ms-backdrop, .merit h3 {
+	color:   rgb(102, 102, 102);
+}
 

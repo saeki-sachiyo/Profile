@@ -1,0 +1,1348 @@
+@charset "utf-8";
+/---------------------------------
+テーマとしてWPに認識させるための記述↓
+---------------------------------/
+/*
+theme Name: TF-profile
+Author: 佐伯　幸世
+Description: 自作テーマ
+version： 1.0.0
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+/*共通*/
+html, body {
+  width: 100%;
+  font-family: 'TsukuBRdGothic-Regular','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+  color: #222;
+}
+
+body{
+  min-width: 1440px;
+  margin: auto;
+  font-size: 18px;
+}
+
+#top-head{
+  min-width: 1440px;
+  margin: auto;
+}
+
+.wrap{
+  overflow: hidden;
+}
+
+/*各セクション毎の余白*/
+.sec{
+  padding: 3% 5%;
+}
+
+/*改行*/
+.add_line{
+  display:none;
+}
+
+/*サブタイトルのスタイル*/
+.about h3 ,.skills_contents h3, .works h3, .profile h3, .contact h3, .compare h3 ,.price h3 ,.skills_contents h3{
+  font-size: 170%;
+  color: #313131;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 3% auto;
+}
+
+/*-------------------------
+  ホバー
+---------------------------*/
+
+.com_hover:hover{
+  transform : scale(1.2);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+/*-------------------------
+  フェイドイン >> left
+---------------------------*/
+.fadeinleft {
+	opacity : 0.1;
+	transform : translate(-1080px, 0);
+	transition : all 1000ms;
+}
+
+/* 画面内に入った状態 */
+.fadeinleft.scrollinleft {
+	opacity : 1;
+	transform : translate(0, 0);
+}
+
+/*-------------------------
+  フェイドイン >> right
+---------------------------*/
+.fadeinright {
+	opacity : 0.1;
+	transform : translate(1080px, 0);
+	transition : all 1000ms;
+}
+
+/* 画面内に入った状態 */
+.scrollinright {
+	opacity : 1;
+	transform : translate(0, 0);
+}
+
+/*-------------------------
+  共通ボタン
+---------------------------*/
+
+/* お問い合わせボタンスタイル */
+.btn1 {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #5e7fca;
+  width: 320px;
+  height: 50px;
+  border-radius: 30px;
+	margin: auto;
+}
+
+/* お問い合わせボタンスタイル */
+.btn1  a{
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px #252525;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*-------------------------
+  ナビ
+---------------------------*/
+.inner {
+  margin: 0 auto;
+}
+.inner:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* header */
+#top-head {
+  top: -100px;
+  position: absolute;
+  width: 100%;
+  margin: 100px auto 0;
+  padding: 50px auto 0;
+  line-height: 1;
+  z-index: 999;
+}
+
+#top-head a,
+#top-head {
+  color:rgb(15, 15, 15);
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Chalkboard','Comic Sans MS',sans-serif;
+  padding-top: 20px;
+}
+
+#top-head .inner {
+  position: relative;
+}
+#top-head .logo img{
+  margin-left: 5%;
+  float: left;
+  width: 200px;
+}
+
+#global-nav ul {
+  list-style: none;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  font-size: 20px;
+}
+#global-nav ul li {
+  float: left;
+}
+#global-nav ul li a {
+  padding: 0 30px;
+}
+
+/* Fixed */
+#top-head.fixed {
+  margin-top: 0;
+  top: 0;
+  position: fixed;
+  padding-top: 10px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: top 0.65s ease-in;
+  -webkit-transition: top 0.65s ease-in;
+  -moz-transition: top 0.65s ease-in;
+  padding-top: 20px;
+}
+
+#top-head.fixed .logo {
+  font-size: 24px;
+  color: #333;
+}
+
+#top-head.fixed #global-nav ul li a {
+  color: #333;
+  padding: 20px;
+}
+
+/* Toggle Button */
+#nav-toggle {
+  display: none;
+  position: absolute;
+  right: 25px;
+  top: 14px;
+  width: 34px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 101;
+}
+#nav-toggle div {
+  position: relative;
+}
+#nav-toggle span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #666;
+  left: 0;
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+  top: 0;
+}
+#nav-toggle span:nth-child(2) {
+  top: 11px;
+}
+#nav-toggle span:nth-child(3) {
+  top: 22px;
+}
+
+/*-------------------------
+  Top背景イメージ
+---------------------------*/
+
+.img1{
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+}
+
+.img1 img{
+  width: 100%;
+}
+
+/*-------------------------
+  Top画像
+---------------------------*/
+/*スマホ非表示*/
+.sp{
+  display: none;
+}
+
+.topview{
+  padding: 5%;
+  padding-top: 9%;
+  padding-bottom: 0%;
+}
+
+.topview img{
+  width: 100%;
+  height: auto;
+}
+
+.topview{
+  position: relative;
+}
+
+.top_ttl{
+  position: absolute;
+  top:30%;
+  left: 10%;
+}
+
+.top_text{
+  color: rgb(41, 40, 40);
+  font-size: 35px;
+  font-family: 'TsukuBRdGothic-Regular','Osaka','MS UI Gothic',sans-serif;
+  font-weight: bold;
+  text-shadow:10px 10px 10px #fff;
+}
+
+
+/*-------------------------
+  About
+---------------------------*/
+#about {
+  overflow: hidden;
+}
+
+#about .about:before {
+  content: '';
+  position: absolute;
+  top:-10px;
+  left: -60px;
+  width: 140%;
+  height: 80%;
+  margin: 3% -10% 0;
+  background:  #f7f7f7;
+  transform-origin: top;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+#about .about-con{
+  display: flex;
+  height: 150%;
+}
+
+#about .about img{
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 5;
+}
+
+#about .about span{
+  color: #ff371c;
+  text-shadow: 5px 5px 5px #fffdfd;
+}
+
+#about .about_text{
+  color: rgb(43, 43, 43);
+  padding: 6% 2%;
+}
+
+#about .about_text1{
+  margin-left: 60px;
+}
+
+
+/*-------------------------
+  thought
+---------------------------*/
+#thought .thought_img{
+    position: absolute;
+    top: -300px;
+    left: 0px;
+    transform: rotate(-20deg);
+    z-index: -1;
+    width: 100%;
+}
+
+#thought .thought_img img{
+    width: 35%;
+}
+
+
+/*-------------------------
+  service
+---------------------------*/
+#service .div_conts{
+  background-image: url(img/service_back1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
+
+/*各セクション毎の余白*/
+#service{
+  padding: 3% 0%;
+}
+
+.div_conts{
+  padding: 5%;
+}
+
+.div_circle{
+  background-color: #fff;
+  opacity: 0.95;
+  box-shadow: 3px 3px 3px #575757;
+  border: 8px double rgb(250, 246, 4);
+  margin: 5%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  padding-top: 50px;
+}
+
+#service .service_circle h3{
+  font-size: 20px;
+  color: rgb(70, 69, 69);
+}
+
+#service  .div_box{
+  width: auto;
+  height: 200px;
+  background-color: #fff;
+  opacity: 0.8;
+  color: #363535;
+  font-weight: bold;
+}
+
+#service .service_name a{
+	direction: none;
+}
+
+#service .service_name h5{
+	color: #000;
+}
+
+/*-------------------------
+  表
+---------------------------*/
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+/* 表の上*/
+table th{
+  text-align: center;
+  color:rgb(29, 28, 28);
+  border-left: 1px solid #dad9d9;
+  border-bottom: 1px solid  #dad9d9;
+  background-color: #d1f2f5;
+  width: 25%;
+  height: 80px;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+/* 表の中*/
+table td{
+  text-align: center;
+  border-left: 1px solid  #dad9d9;
+  border-bottom: 1px solid  #dad9d9;
+  border-top:none;
+  width: 25%;
+  padding: 10px 0;
+  font-size: 18px;
+  height: 80px;
+}
+
+table td:first-child ,table th:first-child{
+  border-left: none;
+}
+
+table tr:last-child td{
+  border-bottom:none;
+}
+
+table .town{
+  background-color: #eff1f1;
+}
+
+/* タイトル */
+.ttl{
+  font-size: 100%;
+  width: 25%;
+}
+
+table .raum{
+  border-right: 6px solid #fff387;
+  border-left: 6px solid #fff387;
+}
+
+table .raum_top{
+  border-top: 6px solid #fff387;
+}
+
+#compare table tr:last-child td:nth-child(2){
+  border-bottom: 6px solid #fff387;
+}
+
+/*-------------------------
+  見本サイト
+---------------------------*/
+#works {
+  position: relative;
+  overflow: hidden;
+}
+
+.works_info img{
+  width: 80%;
+  height: auto;
+}
+
+.works_info a{
+ 	text-decoration:none;	
+}
+
+.link{
+	color: black;
+	border-bottom: 1px solid black;
+}
+
+#works .work_back{
+  position: absolute;
+  top: 100px;
+  right: -100px;
+  transform: rotate(80deg);
+  z-index: -1;
+  width: 100%;
+}
+
+#works .work_back img{
+  width: 40%;
+  opacity: 0.5;
+}
+
+/*-------------------------
+  トップ >> 料金
+---------------------------*/
+.TopPrice{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 50px;
+  font-family: 'TsukuBRdGothic-Regular','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+#price .TopPrice span{
+  font-size: 90px;
+  color: #fd714e;
+  text-shadow: 4px 4px 4px#000;
+}
+
+/*-------------------------
+  フッター
+---------------------------*/
+#footer .img3{
+  width: 200px
+}
+
+#footer .footer{
+  background-color: rgb(196, 196, 196);
+}
+
+#footer .footer a{
+  color: #4d4b4b;
+}
+
+/*-------------------------
+  特徴 >> 
+---------------------------*/
+#Merit{
+  margin: 5%;
+}
+
+.merit h5{
+  border-bottom:solid 3px #ffba7a;
+  width: 550px;
+  margin: auto;
+}
+
+.merit_cont{
+  margin-top: 50px;
+  position: relative;
+  z-index: 3;
+}
+
+
+.num{
+  position: absolute;
+  left: 20%;
+  top:-50px;
+  font-size: 200px;
+  opacity: 0.2;
+  z-index: 1;
+  color: rgb(255, 254, 189);
+  text-shadow: 3px 3px 3px #3f3f3f;
+}
+
+.fa-coins, .fa-mobile-alt, .fa-chart-pie, .fa-envelope-open-text, .fa-hand-holding-heart{
+  font-size: 300%;
+  color: #4b4b4b;
+  margin: 2% 5%;
+}
+
+/*サブタイトル強調*/
+.emphasis{
+  font-size: 150%;
+  color: coral;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px #3b3b3b;
+}
+
+/*-------------------------
+  豆知識 >> 目次
+---------------------------*/
+#trivia{
+  width: 60%;
+  margin: auto;
+  background-color: #fff;
+}
+
+#trivia .contents{
+  border: 30px double #ffead2;
+  padding:30px;
+}
+
+#trivia .contents a{
+  color: rgb(24, 24, 24);
+  text-decoration: underline;
+}
+
+#trivia .triv_cont{
+  width: 90%;
+  margin: auto;
+}
+
+#trivia .triv_conts{
+  margin-top: 6%;
+  margin-bottom: 3%;
+}
+
+#trivia .title{
+  background-color: #fcfae1;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+
+#trivia .subtitle{
+  border-bottom: 5px solid #baf8f8;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#trivia .img_trivia{
+  margin: auto;
+}
+
+#trivia .triv_conts img{
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+
+#trivia .triv_txt{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+/*-------------------------
+  料金 >> ３パターン
+---------------------------*/
+
+#price .oPrice{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 80px;
+  font-family: 'TsukuBRdGothic-Regular','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+#price .oPrice span{
+  font-size: 150px;
+  color: #1e76fc;
+  text-shadow: 4px 4px 4px#000;
+}
+
+#price .price_top{
+  border-bottom: 2px  solid rgb(138, 138, 138);
+  color: #969393;
+  text-shadow: 1px 1px 1px rgb(2, 2, 2);
+  height: 50px;
+}
+
+#price .price_top span{
+  color: #fd714e;
+  text-shadow: 5px 5px 5px #fff;
+}
+
+
+#price .top_color1{
+  background-color: #fdfdee;
+}
+
+#price .top_color2{
+  background-color: #eef7fd;
+}
+
+#price .top_color3{
+  background-color: #fdf2ee;
+}
+
+#price .price_top h4{
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+#price .price_ex{
+  color: #517a4b;
+  font-size: 130%;
+}
+
+#price .price_detail{
+  border-bottom: 2px  dashed #575757;
+}
+
+#price .price_cont{
+  border:2px solid rgb(138, 138, 138);
+  background-color: #fff;
+}
+
+#price .refe{
+  font-size: 15px;
+  color: #666;
+}
+
+#price  .add{
+  color: #ff821c;
+}
+
+/*-------------------------
+  料金 >> オプション（表）バック
+---------------------------*/
+#price_2 .price_2{
+  padding: 100px;
+}
+
+
+/* 表の上*/
+#price_2 table th{
+  width: 20%;
+}
+
+/* 表の中*/
+#price_2 table td{
+  width: 20%;
+}
+
+#price_2 .detail{
+  width: 35%;;
+}
+
+/*-------------------------
+  プロフィール >> バック
+---------------------------*/
+#profile{
+  overflow: hidden;
+}
+
+.profile_shin {
+  overflow: hidden;
+}
+
+.profile_sachi{
+  overflow: hidden;
+}
+
+
+#profile .profile_shin:before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  width: 140%;
+  height: 60%;
+  margin: 3% -10% 0;
+  background:  #e8f7fd;
+  transform-origin: top;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+#profile .profile_sachi:before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  width: 140%;
+  height: 60%;
+  margin: 3% -10% 0;
+  background:  #fafaed;
+  transform-origin: top;
+  transform: rotate(5deg);
+  z-index: -1;
+}
+
+/*-------------------------
+  プロフィール >> 詳細設定
+---------------------------*/
+
+.prof_pic{
+  position: relative;
+  z-index: 3;
+  margin:  auto;
+  border-radius: 50%;
+}
+
+.prof_name{
+  font-size: 25px;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.prof_name2{
+  font-family: 'Courier', monospace;
+}
+
+.profile_oth_cont{
+  border: 30px double #ffead2;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.profile_oth_txt{
+  font-size: 20px;
+  margin: auto;
+}
+
+/*-------------------------
+  QA >> 
+---------------------------*/
+#QA .cate_ttl h3{
+  background-color: #fff;
+  opacity: 0.8;
+  box-shadow: 3px 3px 3px #575757;
+  border: 8px double rgb(250, 246, 4);
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding-top: 70px;
+  font-size: 25px;
+}
+
+/*幅設定*/
+#QA .accordion{
+  width: 70%;
+  margin: auto;
+}
+
+#QA .card{
+  margin: 10px;
+}
+
+/*バックの色*/
+#QA .card-header{
+  background-color: #e9f8fc;
+  box-shadow: 3px 3px 3px #666;
+}
+#QA .card span{
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #3f3f3f;
+  margin-right: 5px;
+}
+
+#QA .card a{
+  text-decoration: none;
+  color: #000;
+}
+
+#QA .card-body .btn1 a{
+  color: #fff;
+}
+
+/*-------------------------
+  お問い合わせページ >> Top
+---------------------------*/
+.topview{
+  padding: 5%;
+  padding-top: 9%;
+  padding-bottom: 0%;
+}
+
+.topview img{
+  width: 100%;
+  height: auto;
+}
+
+.topview{
+  position: relative;
+}
+
+.top_ttl_sub{
+  position: absolute;
+  top:40%;
+}
+
+/*-------------------------
+  お問い合わせページ >> お問い合わせ
+---------------------------*/
+#contact .contact_info{
+  background:  #ebf8fd;
+  padding-top: 30px;
+}
+
+#contact .contact_text{
+  margin-top: 50px;
+}
+
+#contact .contact_text h3{
+  font-size: 160%;
+}
+
+#contact .contact_info label{
+  font-size:100%;
+}
+
+.contact_item{
+  margin: 20px;
+  font-size: 120%;
+}
+
+.contact_inp{
+  width: 600px;
+}
+
+.contact_detail{
+  height: 280px;
+}
+
+/*問い合わせ内容の高さを広く*/
+.contact_detail{
+    height: 350px;
+}
+
+/*送信ボタン*/
+.submit_btn{
+  background-color: #666666;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 1rem;
+}
+
+/*--------------------------
+  小さいサイズ　ナビ
+--------------------------*/
+
+@media (max-width: 900px) {
+  #top-head,
+  .inner {
+      width: 100%;
+      padding: 0;
+  }
+  #top-head {
+      top: 0;
+      position: fixed;
+      margin-top: 0;
+  }
+  /* Fixed reset */
+  #top-head.fixed {
+      padding-top: 0;
+      background: transparent;
+  }
+  #mobile-head {
+      background: #fff;
+      width: 100%;
+      height: 56px;
+      z-index: 999;
+      position: relative;
+  }
+  #top-head.fixed .logo,
+  #top-head .logo {
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      color: #333;
+      font-size: 26px;
+  }
+  #global-nav {
+      position: absolute;
+      /* 開いてないときは画面外に配置 */
+      top: -100vh;
+      background: #333;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      padding: 10px 0;
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+  }
+  #global-nav ul {
+      padding-top: 100px;
+      padding-left: 0;
+      list-style: none;
+      position: static;
+      right: 0;
+      bottom: 0;
+      font-size: 14px;
+  }
+  #global-nav ul li {
+      float: none;
+      position: static;
+  }
+  #top-head #global-nav ul li a,
+  #top-head.fixed #global-nav ul li a {
+      width: 100%;
+      display: block;
+      color: #fff;
+      padding: 18px 0;
+  }
+  #nav-toggle {
+      display: block;
+  }
+  /* #nav-toggle 切り替えアニメーション */
+  .open #nav-toggle span:nth-child(1) {
+      top: 11px;
+      -webkit-transform: rotate(315deg);
+      -moz-transform: rotate(315deg);
+      transform: rotate(315deg);
+  }
+  .open #nav-toggle span:nth-child(2) {
+      width: 0;
+      left: 50%;
+  }
+  .open #nav-toggle span:nth-child(3) {
+      top: 11px;
+      -webkit-transform: rotate(-315deg);
+      -moz-transform: rotate(-315deg);
+      transform: rotate(-315deg);
+  }
+  /* #global-nav スライドアニメーション */
+  .open #global-nav {
+      /* #global-nav top + #mobile-head height */
+      transform: translateY(100vh);
+  }
+
+}
+  
+
+/*--------------------------
+  携帯
+--------------------------*/
+/*スモールサイズ*/
+@media (max-width: 575px) {
+body{
+  min-width: initial;
+  min-width: auto;
+  font-size: 14px;
+}
+
+
+/*-------------------------------------------
+  共通
+---------------------------------------------*/
+.col-ttl h3{
+  font-size: 20px;
+}
+
+/*-------------------------
+  共通ボタン
+---------------------------*/
+
+/* お問い合わせボタンスタイル */
+.btn1 {
+  text-shadow: 1px 1px 1px #050505;
+  padding: 12px;
+  width: 200px;
+  height: auto;
+}
+
+/*-------------------------
+  改行*
+---------------------------*/
+#top-head .logo img{
+  width: 130px;
+}
+
+/*-------------------------
+各セクション毎の余白
+---------------------------*/
+.sec{
+  padding: 12% 5%;
+}
+
+/*-------------------------
+  改行*
+---------------------------*/
+.add_line{
+  display:block;
+}
+
+/*-------------------------
+  フェイドイン >> left
+---------------------------*/
+.fadeinleft {
+	opacity : 1;
+	transform : translate(0, 0);
+	transition : all 1000ms;
+}
+
+/*-------------------------
+  フェイドイン >> right
+---------------------------*/
+.fadeinright {
+	opacity : 1;
+	transform : translate(0, 0);
+	transition : all 1000ms;
+}
+
+/*--------------------------
+  ナビ
+--------------------------*/
+#top-head,
+.inner {
+    width: 100%;
+    padding: 0;
+}
+#top-head {
+    top: 0;
+    position: fixed;
+    margin-top: 0;
+}
+/* Fixed reset */
+#top-head.fixed {
+    padding-top: 0;
+    background: transparent;
+}
+#mobile-head {
+    background: #fff;
+    width: 100%;
+    height: 56px;
+    z-index: 999;
+    position: relative;
+}
+#top-head.fixed .logo,
+#top-head .logo {
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    color: #333;
+    font-size: 26px;
+}
+#global-nav {
+    position: absolute;
+    /* 開いてないときは画面外に配置 */
+    top: -100vh;
+    background: #333;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding: 10px 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+#global-nav ul {
+    padding-top: 100px;
+    padding-left: 0;
+    list-style: none;
+    position: static;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+}
+#global-nav ul li {
+    float: none;
+    position: static;
+}
+#top-head #global-nav ul li a,
+#top-head.fixed #global-nav ul li a {
+    width: 100%;
+    display: block;
+    color: #fff;
+    padding: 18px 0;
+}
+#nav-toggle {
+    display: block;
+}
+/* #nav-toggle 切り替えアニメーション */
+.open #nav-toggle span:nth-child(1) {
+    top: 11px;
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+.open #nav-toggle span:nth-child(2) {
+    width: 0;
+    left: 50%;
+}
+.open #nav-toggle span:nth-child(3) {
+    top: 11px;
+    -webkit-transform: rotate(-315deg);
+    -moz-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+}
+/* #global-nav スライドアニメーション */
+.open #global-nav {
+    /* #global-nav top + #mobile-head height */
+    transform: translateY(100vh);
+}
+
+/*-------------------------
+  Top背景イメージ
+---------------------------*/
+
+.img1{
+  top: 300px;
+  opacity: 0.7;
+}
+
+.img1 img{
+  width: 100%;
+}
+
+/*-------------------------
+  Top
+---------------------------*/
+/*PC非表示*/
+#topview .pc{
+  display: none;
+}
+#topview .sp{
+  display: block;
+  padding-bottom: 35px;
+}
+
+#topview .topview{
+  padding: 0%;
+  padding-top: 9%;
+}
+
+#topview .top_ttl{
+  top:18%;
+  left: 5%;
+}
+
+#topview .top_ttl img{
+  width: 150px;
+}
+
+#topview .top_text{
+  font-size: 18px;
+}
+
+/*-------------------------
+  About
+---------------------------*/
+#about .about_text1{
+  margin: 10px;
+}
+
+
+/*-------------------------
+  thought
+---------------------------*/
+#thought .thought_img{
+  top: 30px;
+  left: 5px;
+}
+
+#thought .thought_img img{
+  width: 80%;
+  opacity: 0.2;
+}
+
+
+/*-------------------------
+  service
+---------------------------*/
+#service .div_conts{
+  background-size: 300% auto;
+}
+
+.div_circle{
+  width: 200px;
+  height: 200px;
+}
+
+#service .service_name h5{
+  color: #000;
+  font-size: 15px;
+}
+
+#service  .div_box{
+  width: auto;
+  height: auto;
+}
+
+
+/*-------------------------
+  料金 >> 3パターン
+---------------------------*/
+.TopPrice{
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-family: 'TsukuBRdGothic-Regular','MS UI Gothic','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+#price .TopPrice span{
+  font-size: 40px;
+  color: #fd714e;
+  text-shadow: 4px 4px 4px#000;
+}
+
+.price_s h4{
+  font-size: 20px;
+}
+
+/*-------------------------
+  見本
+---------------------------*/
+#works .work_back{
+  position: absolute;
+  top: 150px;
+  right: 10px;
+  transform: rotate(5deg);
+  z-index: -1;
+  width: 100%;
+}
+
+#works .work_back img{
+  width: 120%;
+  opacity: 0.3;
+}
+
+/*-------------------------
+  表
+---------------------------*/
+/* 表の上*/
+table th{
+  font-size: 18px;
+}
+
+/* 表の中*/
+table td{
+  font-size: 14px;
+}
+
+/*-------------------------
+  表 >> 共通
+---------------------------*/
+table {
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*-------------------------
+  フッター
+---------------------------*/
+  .footer-info{
+    display: none;
+  }
+}
+
+

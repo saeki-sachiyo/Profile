@@ -1,0 +1,480 @@
+@charset "utf-8";
+/---------------------------------
+テーマとしてWPに認識させるための記述↓
+---------------------------------/
+/*
+theme Name: house
+Author: yoshida-sachiyo
+Description: 自作テーマ
+version： 1.0.0  
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html, body {
+  height: 100px;
+  width: 100%;
+	overflow-x:hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+/*共通*/
+h1,h2,h3{
+  font-family: cursive;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.add_line{
+  display:none;
+}
+
+/*線*/
+hr {
+  border-top: 2px solid #b4b4b4;
+  width: 80%;
+  margin-top:  .3rem;
+  margin-bottom: 1rem;
+}
+
+span{
+  display:inline-block;
+}
+
+/* ナビバー  */
+.navbar {
+  padding: .8rem;
+  width: 100%;
+  position: fixed;
+}
+
+.icon {
+  height: 40px;
+}
+
+/* 各ナビ項目への右側余白設定 */
+.navbar-nav li {
+  padding-right: 10px; 
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+}
+
+
+/*Top画面*/
+.top-img{
+	padding-top:66px;
+}
+
+
+#home img{
+    width: 100%;
+    height: 50vw;
+}
+
+/*Top画 文字*/
+
+/*タイトルアニメーション*/
+@keyframes typing {
+  0%{width:0}
+  100%{width: 100%}
+}
+
+
+
+.title {
+  margin: auto;
+  height: 3ch;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 11ch;
+  animation: typing 5s  infinite;
+}
+
+
+.carousel-caption {
+  position: absolute;
+  top: 20%;
+  text-align: center;
+}
+
+.carousel-caption h1{
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px #000;
+}
+
+.carousel-caption h2{
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px #000;
+}
+
+.carousel-caption h3 {
+  font-size: 200%;
+  font-weight: 100;
+  text-shadow: 2px 2px 2px #000;
+}
+/*Top画 ボタン*/
+.con_btn{
+  border: 1px solid #ffab2e;
+}
+.con_btn:hover {
+  background-color: #ffab2e;
+}
+
+/*メッセージbox*/
+#meassagetitele{
+  position: relative;
+  z-index: 4;
+}
+
+#message{
+ border-top:none;
+ position: relative;
+ top:-38px;
+}
+
+/*「ほっ」の文字とアニメーション*/
+@keyframes swing{
+  0%{transform:translate(-5px,5px);}
+  50%{transform: translate(5px,-5px);}
+  100%{transform:translate(-5px,5px);}
+}
+.ho{
+  color: #ffab2e;
+  text-shadow:2px 2px 2px #3f3f3f;
+  animation: swing 3s infinite;
+  font-size: 140%;
+}
+/*施工実績*/
+
+/*カルーセルの矢印の色を変える*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  background-image: none;
+}
+.carousel-control-next-icon:after{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
+}
+
+/*説明文のスタイル*/
+.work_info{
+  font-size: 120%;
+  margin-top: 20px;
+}
+
+/*お悩み・イベント*/
+#event, #event2{
+  margin: 5% 5% 6%;
+  padding-top: 2rem;
+}
+
+.Worries{
+  position: relative;
+}
+
+/*写真の幅を変える*/
+.Worries_img img{
+  width: 50%;
+  height: auto;
+}
+
+/*hose型に切り取る*/
+.big_house1{
+  clip-path: polygon(51% 0, 100% 48%, 100% 100%, 0 100%, 0 50%);
+}
+
+
+/*「悩み」を右端に設定*/
+.Worries_info{
+  width: 65%;
+  background-color: #FFFFFF;
+　　　border: double 3px #fddd9b;
+  box-shadow:3px 3px 3px #3f3f3f;
+  position: absolute;
+  top:40%;
+  left: 40%;
+  padding: 6% 3%;
+  font-size: 20px;
+}
+
+/*チェックに色付け*/
+.Worries_info .fa-check-square{
+  color: #ffab2e;
+}
+
+/*Event詳細ボタン*/
+.event_btn{
+  width: 120px;
+  color:white;
+}
+
+.big_btn{
+  width: 300px;
+  height: 60px;
+  margin: 10px;
+  padding: auto;
+  border: 3px solid #3f3f3f;
+  border-radius: 8px;
+  color: #000;
+  font-size: 20px;
+  line-height: 50px;
+}
+.big_btn a{
+  color: #000;
+  position: relative;
+}
+
+.big_btn:hover{
+  background-color: rgb(255, 249, 191);
+  opacity: 0.7;
+  color: #000;
+}
+
+.fa-arrow-circle-right{
+  justify-content: left;
+  position: relative;
+  left: -40px;
+}
+
+/*こだわり*/
+.comit{
+  margin-top: 70px;
+}
+
+.comit span{
+  color: #ffab2e;
+  font-size: 150%;
+  text-shadow: 2px 2px 2px #3f3f3f;
+}
+
+
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+
+/*---Media Queries --*/
+@media (min-width: 700px) {
+  .social a {
+    /* 通常も4rem */
+    font-size: 4rem;
+    padding: 2rem;
+  }
+}
+
+
+@media (max-width: 1000px) {
+	
+	/*改行*/
+	.add_line{
+    display:block;
+  }
+
+  /*施工実績の説明文*/
+  .work_info{
+    font-size: 90%;
+  }
+
+  /*Event*/
+  .Worries{
+    margin-bottom: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-caption h1 {
+    font-size: 300%;
+  }
+  
+  .carousel-caption h2 {
+    font-size: 100%;
+    font-weight: 400;
+    padding-bottom: .2rem;
+  }
+
+  .carousel-caption .btn {
+    font-size: 95%;
+    padding: 8px 14px;
+  }
+
+  .display-4 {
+    font-size: 200%;
+  }
+  /*Event*/
+
+  .Worries_img img{
+    width: 80%;
+    height: auto;
+  }
+
+
+  /*Event*/
+  .event_btn{
+    width: 200px;
+  }
+
+  .Worries{
+    margin-bottom: 80px;
+  }
+
+}
+
+
+
+@media (max-width: 576px) {
+	/*共通*/
+	#comit, #event, #about ,#work{
+		margin-top:60px;
+	}
+	
+	
+  .carousel-caption {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-caption h1 {
+    font-size: 250%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 110%;
+  }
+
+  .carousel-caption .btn {
+    font-size: 90%;
+    padding: 4px 8px;
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+	
+	/*タイトルアニメーション*/
+
+	.title {
+  	animation-name:  none;
+	animation-duration: 0s;
+	}
+
+  /*メッセージ(about)*/
+  .about h2{
+    font-size:28px
+  }
+
+  .about h4{
+    font-size:22px
+  }
+  
+  .Worries_img img{
+    width: 90%;
+    height: auto;
+  }
+
+  .Worries_info{
+    width: 80%;
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    font-size: 90%;
+    padding: 1% 1%;
+  }
+
+  .Worries_info2{
+    font-size: 120%;
+  }
+
+  /*Event*/
+  #event{
+    margin-bottom: 110px;
+  }
+	
+	/*comit(こだわり) */
+	.comit h1{
+		font-size:180%;	
+	}
+
+	#comit h3{
+		font-size:140%;
+		font-weight:bold;
+	}
+}
+
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  /* スライドの速度 */
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+/* 親要素に対し */
+  position: relative;
+  width: 100%;
+/* backgroundのみ、高さが足りていないので修正 */
+  height: 400%;
+  margin: 0!important;
+}
+
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height:100%;
+}
+#fixed {
+  /* 画像本体 */
+  background-image: url('img/air.jpg');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,804 @@
+@charset "utf-8";
+/---------------------------------
+テーマとしてWPに認識させるための記述↓
+---------------------------------/
+/*
+theme Name: TF-profile
+Author: 佐伯　幸世
+Description: 自作テーマ
+version： 1.0.0
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+/*共通部分*/
+html {
+  overflow: auto;
+  overflow-x: hidden;
+	height: 100px;
+  max-width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color:  rgb(224, 0, 0);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+/*改行*/
+.add_line{
+  display:none;
+}
+
+/*サブタイトルのスタイル*/
+.about h3 ,.skills_contents h3,.profile h3, .contact h3, .compare h3 ,.price h3 ,.skills_contents h3, .works_title h3{
+  font-size: 170%;
+  color: #313131;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 3% auto;
+  border-top: 4px double #8d8d8d !important;
+  border-bottom: 4px double #8d8d8d !important;
+  padding: 12px 0px 12px 5px ;
+  width: 60%;
+}
+
+/*ブロックごとの下の空白*/
+ .skills_contents ,.merit, .compare , .works, .price{
+  margin-bottom: 11%;
+}
+
+
+/*Hover設定*/
+.btn1:hover, .works_info img:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+/*スクロール*/
+.fadein {
+	opacity : 0.1;
+	transform : translate(0, 80px);
+	transition : all 1500ms;
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+  }
+
+
+/* アニメーション*/
+
+/* navbar全体に余白設定 */
+.navbar {
+  padding: .8rem;
+  width: 100%;
+  position: fixed;
+}
+
+#header #gnav li a.current {
+	color: #d5d5d5;
+	text-decoration: underline;
+}
+
+/*アイコン*/
+.Icon {
+  height: 40px;
+}
+
+/* 各ナビ項目への右側余白設定 */
+.navbar-nav li {
+  padding-right: 10px; 
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+}
+
+.menu_line{
+  border-bottom: 3px solid #3b3b3b;
+}
+
+/*Top画像のスタイル*/
+/*Top*/
+.Top{
+  overflow: hidden;
+}
+
+.Top img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 65px;
+}
+
+span{
+  display:inline-block;
+}
+
+.sp-img{
+  display: none;
+}
+
+/* お問い合わせボタンスタイル */
+.btn1 {
+  background-color: #ffae44;
+  width: 200px;
+  height: 50px;
+  color: rgb(255, 254, 254);
+  font-weight: bold;
+}
+
+/* お問い合わせボタンスタイル */
+.btn1  a{
+	color: #ffff;
+	font-style: none;
+}
+
+/* できること */
+#cando{
+  margin: 1% 3% 3%;
+}
+
+.cando{
+  margin: auto;
+  justify-content: center;
+}
+
+.cando span{
+  color: #ffc62b;
+  text-shadow: 1px 1px 1px #3f3f3f;
+  margin: 3px;
+  animation: swin 3s infinite;
+  transform-origin: top;
+}
+
+.cando .text1{
+  width: 450px;
+}
+
+.fa-check-square{
+  color: #ff9e43;
+}
+
+
+/* About */
+.cando p ,.about .text1{
+  font-size:18px;
+}
+
+#about {
+  overflow: hidden;
+}
+
+
+#about{
+  padding: 5%;
+}
+
+.about:before {
+  content: '';
+  position: absolute;
+  top:-10px;
+  left: -60px;
+  width: 140%;
+  height: 100%;
+  margin: 3% -10% 0;
+  background:  #ffebe0;
+  transform-origin: top;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+.about-con{
+  display: flex;
+  height: 150%;
+}
+
+.about img{
+  width: 40%;
+  height: 70%;
+  position: relative;
+  z-index: 5;
+}
+
+.about_text{
+  color: rgb(43, 43, 43);
+  padding: 8% 2% 6% 6%;
+}
+
+/*Merit*/
+#Merit{
+  margin: 5%;
+}
+
+.merit h5{
+  border-bottom:solid 3px #ffba7a;
+  width: 550px;
+  margin: auto;
+}
+
+.merit_cont{
+  margin-top: 50px;
+  position: relative;
+  z-index: 3;
+}
+
+
+.num{
+  position: absolute;
+  left: 20%;
+  top:-50px;
+  font-size: 200px;
+  opacity: 0.2;
+  z-index: 1;
+  color: rgb(255, 254, 189);
+  text-shadow: 3px 3px 3px #3f3f3f;
+}
+
+.fa-coins, .fa-mobile-alt, .fa-chart-pie, .fa-envelope-open-text, .fa-hand-holding-heart{
+  font-size: 300%;
+  color: #4b4b4b;
+  margin: 2% 5%;
+}
+
+/*サブタイトル強調*/
+.emphasis{
+  font-size: 150%;
+  color: coral;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px #3b3b3b;
+}
+
+
+/* スキル */
+#skill_all{
+  margin: 7% 0% 7%;
+  padding: 3% 5% 1%;
+  background-image: url(img/back_3.jpg);
+  background-blend-mode:lighten;
+  background-size: 100%;
+}
+
+
+#skill_all h4{
+  color: #000;
+  font-size: 180%;
+}
+#skill_all span{
+font-size: 120%;
+}
+
+.skills {
+  width: 100%;
+  height: 100%;
+  color:  #202020;
+  text-align: center;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.skill_card {
+  width: calc((100% - 3%) / 5);
+  height: calc((100% - 3%) / 5);
+  padding: 30px 0;
+  border: 2px solid  #383838;
+  background-color: white;
+  border-radius: 30px;
+  margin: 0px 5px 20px;
+}
+
+.skill_icon {
+  font-size: 39px;
+  font-weight: 400;
+}
+
+.skill_name h2{
+  font-size: 15px;
+}
+/*デザイン*/
+.fa-pen-nib{
+  color: #ffe347;
+}
+
+/*コーディング*/
+.fa-laptop-code{
+  color: #0a0442;
+}
+
+/*分析*/
+.fa-chart-line{
+  color: #ff8147;
+}
+
+/*インスタ*/
+.fa-instagram{
+  color: #ff5347;
+}
+
+/*OEM*/
+.fa-globe-asia{
+  color: #52f3ff;
+}
+
+/*LINE*/
+.fa-line{
+  color: #4bd852;
+}
+
+/*ブログ*/
+.fa-desktop{
+  color: #5a5a5a;
+}
+
+/*カメラ*/
+.fa-camera{
+  color: #ffc547;
+}
+
+/*比較 表*/
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+table th:first-child{
+  border-radius: 30px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 30px 0 0;
+  border-right: 1px solid  #ffb01c;
+}
+
+table th{
+  text-align: center;
+  color:rgb(85, 85, 85);
+  background:#ffd5a6;
+  border-left: 1px solid #ffa845;
+  border-top: 1px solid  #ffa845;
+  border-bottom: 1px solid  #ffa845;
+  width: 25%;
+  height: 30px;
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid  #ffa845;
+  border-bottom: 1px solid  #ffa845;
+  border-top:none;
+  width: 25%;
+  padding: 10px 0;
+  font-size: 12px;
+  height: 80px;
+}
+
+table td:last-child{
+  border-right: 1px solid  #ffa845;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 30px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 30px 0;
+}
+
+#compare .ttl{
+  font-size: 100%;
+  font-weight: bold;
+}
+
+#compare .fa-bullseye, .fa-circle{
+  font-size: 200%;
+}
+
+#compare  .price_comp{
+  font-size: 130%;
+}
+
+/*works*/
+#works {
+  position: relative;
+  overflow: hidden;
+  margin-top: 5%;
+}
+
+.works_info:before {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 130%;
+  height: 100%;
+  margin: 3% -10% 0;
+  background:  #fffee0;
+  transform-origin: top;
+  transform: rotate(3deg);
+  z-index: -1;
+}
+
+.works_info:after {
+  content: '';
+  position: absolute;
+  top:0;
+  left: -40px;
+  width: 130%;
+  height: 100%;
+  margin: 3% -10% 0;
+  background:  #ffb937;
+  transform-origin: top;
+  transform: rotate(-3deg);
+  z-index: -2;
+  overflow: hidden;
+}
+.works_info img{
+  width: 80%;
+  height: auto;
+}
+
+.works_info a{
+ 	text-decoration:none;	
+}
+
+.link{
+	color: black;
+	border-bottom: 1px solid black;
+}
+
+
+/* price 料金*/
+#price{
+  margin: 5% 5%;
+}
+.price_top{
+  border-bottom: 2px  solid rgb(138, 138, 138);
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgb(43, 43, 43);
+  height: 50px;
+}
+
+.top_color1{
+  background-color: #91ffa0;
+}
+
+.top_color2{
+  background-color: #ffdb76;
+}
+
+.top_color3{
+  background-color: #ffa489;
+}
+
+.price_top h4{
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.price_ex{
+  color: #517a4b;
+  font-size: 130%;
+}
+
+.price_detail{
+  border-bottom: 2px  dashed #575757;
+
+  margin: auto;
+  height: 180px;
+}
+
+.price_detail2{
+  height: 168px;
+}
+
+.price_cont{
+  border:2px solid rgb(138, 138, 138);
+}
+
+/*ーーーーーーーーーーーーーーー
+  profile
+ーーーーーーーーーーーーーーー*/
+#profile{
+  margin-top: 8%;
+}
+
+#profile .fa-globe-asia{
+	color:black;
+}
+
+.profile_shin_cot, .profile_sachi_cot{
+	width:65%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.prof_info{
+	margin:auto;
+}
+
+.profile_shin{
+	background-color:rgb(233, 248, 248);
+}
+
+.profile_sachi{
+  background-color:rgb(245, 255, 239);
+  padding-bottom: 5%;
+}
+
+.profile img{
+	border-radius:50%;
+}
+/*ーーーーーーーーーーーーーーー
+よくある質問
+ーーーーーーーーーーーーーーー*/
+
+.accordion{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#QA{
+  margin: 5%;
+}
+
+.card{
+  margin-top: 20px;
+  box-shadow: 3px 3px 3px #616060;
+}
+
+.card a{
+  text-decoration: none;
+  color: #000;
+}
+
+.card-header{
+  background-color: #fff8e4;
+}
+
+/*ーーーーーーーーーーーーーーー
+Contanct
+ーーーーーーーーーーーーーーー*/
+
+#contact{
+  padding-top: 10%;
+  background-image: url(img/back_5.jpg);
+  background-blend-mode:lighten;
+  background-size: 100%;
+}
+
+.contact_info label{
+  font-size:100%;
+}
+
+.contact_item{
+  margin: 20px;
+  font-size: 120%;
+}
+
+.contact_inp{
+  width: 600px;
+}
+
+.contact_detail{
+  height: 280px;
+}
+
+/*問い合わせ内容の高さを広く*/
+.contact_detail{
+    height: 350px;
+}
+
+/*送信ボタン*/
+.submit_btn{
+  background-color: #666666;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 1rem;
+}
+
+
+/*---Media Queries --*/
+
+/*ミディアムサイズ*/
+@media (max-width: 768px) {
+  /*Top画*/
+/*  .pc-img{
+    display: none;
+  }*/
+
+  /*Aboutのスタイル（縦に配置)*/
+  .about-con{
+    display: inline-block;
+  }
+  
+  .about img{
+    height: auto;
+    width: 80%;
+  }
+  
+  .about_text{
+    width: 90%;
+    padding: 80px 20px 20px 20px;
+    position: relative;
+    top:-50px;
+    left:0px;
+  }
+
+  /*merit*/
+  .num{
+    display: none;
+  }
+
+  /* スキル幅変える */
+  .skill_card {
+    width: calc((100% - 7%) / 2);
+  }
+
+  /* Contact */
+  .contact{
+    margin-left:0;
+  }
+
+  .contact_inp{
+    width: 400px;
+  }
+
+  /*price 料金*/
+  .price_detail{
+    height: auto;
+  }
+  
+  .price_detail2{
+    height: auto;
+  }
+}
+
+/*スモールサイズ*/
+@media (max-width: 576px) {
+  /*共通*/
+  .line{
+    display: none;
+  }
+  /*サブタイトルのスタイル*/
+  .about h3 ,.skills_contents h3, .works h3, .profile h3, .contact h3, .compare h3 ,.price h3 ,.skills_contents h3, .profile h3{
+    font-size: 120%;
+  }
+
+  /*ブロックごとの下の空白*/
+ .skills_contents ,.merit, .compare , .works, .price ,.profile{
+  margin-bottom: 25%;
+  }
+
+  /*改行*/
+  .add_line{
+    display:block;
+  }
+
+  /*info*/
+  .info h2{
+    font-size:120%;
+  }
+
+  .info p{
+    font-size:100%;
+  }
+
+  /*できること*/
+  .cando .text1{
+    width: 100%;
+  }
+  .cando h3{
+    font-size:130%;
+  }
+  .cando p,.about .text1{
+    font-size:100%;
+  }
+  /*merit*/
+  .merit h4{
+    width: 90%;
+  }
+
+  /*about*/
+  .merit h5{
+    width: 90%;
+  }
+  #about{
+    padding: 5% 0;
+  }
+
+  /*Skill*/
+	#skill_all{
+		background-size: auto 100%;
+	}
+
+  .skill_card {
+    width: calc((100% - 8%) / 2);
+  }
+
+  /* 比較 */
+  table th, table td{
+    font-size: 12px;
+  }
+
+  #compare  .price_comp{
+    font-size: 100%;
+  }
+
+  /*Work*/
+  .works_info img{
+    width: 100%;
+  }
+
+  /*profile*/
+  .prof_info {
+    margin: 0;
+  }
+
+  /* Contact */
+  #contact{
+    background-size: auto 100%;
+  }
+
+  .contact{
+    margin-left:0;
+  }
+
+  .contact_inp{
+    width: 90%;
+  }
+  .contact_text h3{
+    font-size: 140%;
+  }
+}
+
+_:-ms-lang(x)::-ms-backdrop, .about h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .merit h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .skills_contents h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .works h3 {
+	color:   rgb(102, 102, 102);
+}
+
+_:-ms-lang(x)::-ms-backdrop, .profile h3 {
+	color:   rgb(102, 102, 102);
+}
+
+
+_:-ms-lang(x)::-ms-backdrop, .contact h3 {
+	color:   rgb(102, 102, 102);
+}
+
+
+_:-ms-lang(x)::-ms-backdrop, .merit h3 {
+	color:   rgb(102, 102, 102);
+}
+

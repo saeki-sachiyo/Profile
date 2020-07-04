@@ -1,0 +1,450 @@
+@charset "utf-8";
+/---------------------------------
+テーマとしてWPに認識させるための記述↓
+---------------------------------/
+/*
+theme Name: cafe2
+Author: yoshida sachiyo
+Description: 自作テーマ
+version： 1.0.0  
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html, body {
+  height: 100px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+/*共通*/
+h1,h2,h3{
+  font-family: cursive;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+
+/*ナビバー*/
+.inner {
+  margin: 0 auto;
+}
+.inner:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* header */
+#top-head {
+  top: -100px;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  margin: 100px auto 0;
+  padding: 30px auto 0;
+  line-height: 1;
+  z-index: 2000;
+}
+
+#top-head a,
+#top-head {
+  color: rgb(22, 17, 17);
+  text-decoration: none;
+}
+#top-head .inner {
+  position: relative;
+}
+#top-head .logo {
+  margin-left: 5%;
+  float: left;
+  font-size: 36px;
+}
+
+#global-nav ul {
+  list-style: none;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  font-size: 20px;
+}
+#global-nav ul li {
+  float: left;
+}
+#global-nav ul li a {
+  padding: 0 30px;
+}
+
+/* Fixed */
+#top-head.fixed {
+  margin-top: 0;
+  top: 0;
+  position: fixed;
+  padding-top: 10px;
+  height: 55px;
+  background: #fff;
+  background: rgba(255,255,255,.7);
+  transition: top 0.65s ease-in;
+  -webkit-transition: top 0.65s ease-in;
+  -moz-transition: top 0.65s ease-in;
+}
+#top-head.fixed .logo {
+  font-size: 24px;
+  color: #333;
+}
+#top-head.fixed #global-nav ul li a {
+  color: #333;
+  padding: 0 20px;
+}
+
+/* Toggle Button */
+#nav-toggle {
+  display: none;
+  position: absolute;
+  right: 25px;
+  top: 14px;
+  width: 34px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 101;
+}
+#nav-toggle div {
+  position: relative;
+}
+#nav-toggle span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #666;
+  left: 0;
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+  top: 0;
+}
+#nav-toggle span:nth-child(2) {
+  top: 11px;
+}
+#nav-toggle span:nth-child(3) {
+  top: 22px;
+}
+
+/*サブタイトル非表示*/
+#global-nav .sub_title{
+  display: none;
+}
+
+/*-------------
+本体
+--------------*/
+/*コンテンツ共通*/
+.content1,.content2{
+  padding-top: 70px;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+.content img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(43, 43, 43);
+}
+
+.content img:hover, .news:hover ,.content5 .cont_last:hover{
+ transform:scale(0.9) ;
+ opacity: 0.6;
+}
+
+
+/*画像上の文字の配置*/
+.content{
+  position: relative;
+}
+
+.char{
+  position:absolute;
+  top: 5%;
+  left: 30px;
+  font-size: 200%;
+  color: rgb(255, 251, 251);
+  text-shadow: 3px 3px 3px rgb(0, 0, 0);
+  font-family: cursive;
+  font-weight: bold;
+}
+
+/*動画*/
+.movie{
+  margin: auto;
+}
+
+#player{
+  border-radius: 20px;
+  width: 100%;
+  margin: auto;
+}
+
+.content2 img{
+  width: 100%;
+  height: auto;
+}
+
+/*-----------------
+About
+-----------------*/
+.about{
+  color: rgb(43, 43, 43);
+}
+
+/*-----------------
+Reserve
+-----------------*/
+.content2{
+  position: relative;
+}
+.content2-1{
+  position: absolute;
+  top: 100px;
+}
+.content2-2{
+  position: absolute;
+  bottom: 0;
+  width: auto;
+}
+
+.reserve{
+  display: flex;
+  vertical-align:bottom;
+	width:100%;
+}
+
+.reserve .pcimg {
+  display: block;
+}
+
+.reserve .spimg{
+  display: none;
+}
+
+/*-----------------
+News
+-------------------*/
+.news{
+  background-color: rgb(136, 136, 136);
+  box-shadow: 3px 3px 3px #666;
+  padding: 3%;
+  border-radius: 20px;
+}
+
+.content3 a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.content3 .news{
+  height: 113px;
+}
+
+/*-----------------
+お問い合わせ・こだわり
+-------------------*/
+.content5 .cont_last{
+  background-color: black;
+  font-size: 25px;
+  height: 110px;
+  border-radius: 20px;
+}
+
+.content5 .cont_last a{
+  text-decoration: none;
+  margin: 0;
+  color: rgb(255, 255, 255);
+}
+
+.content5 p{
+  line-height: 110px;
+}
+
+/*Nav*/
+@media screen and (max-width: 900px) {
+  #top-head,
+  .inner {
+      width: 100%;
+      padding: 0;
+  }
+  #top-head {
+      top: 0;
+      position: fixed;
+      margin-top: 0;
+  }
+  /* Fixed reset */
+  #top-head.fixed {
+      padding-top: 0;
+      background: transparent;
+  }
+  #mobile-head {
+      background: #fff;
+      width: 100%;
+      height: 56px;
+      z-index: 999;
+      position: relative;
+  }
+  #top-head.fixed .logo,
+  #top-head .logo {
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      color: #333;
+      font-size: 26px;
+  }
+  #global-nav {
+      position: absolute;
+      /* 開いてないときは画面外に配置 */
+      top: -100vh;
+      background: rgb(255, 255, 255);
+      opacity: 0.95;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      padding: 10px 0;
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+  }
+  #global-nav ul {
+      padding-top: 100px;
+      padding-left: 0;
+      list-style: none;
+      position: static;
+      right: 0;
+      bottom: 0;
+      font-size: 25px;
+  }
+  #global-nav ul li {
+      float: none;
+      position: static;
+  }
+  #top-head #global-nav ul li a,
+  #top-head.fixed #global-nav ul li a {
+      width: 100%;
+      display: block;
+      color: rgb(7, 7, 7);
+      padding: 18px 0;
+  }
+  #nav-toggle {
+      display: block;
+  }
+  /* #nav-toggle 切り替えアニメーション */
+  .open #nav-toggle span:nth-child(1) {
+      top: 11px;
+      -webkit-transform: rotate(315deg);
+      -moz-transform: rotate(315deg);
+      transform: rotate(315deg);
+  }
+  .open #nav-toggle span:nth-child(2) {
+      width: 0;
+      left: 50%;
+  }
+  .open #nav-toggle span:nth-child(3) {
+      top: 11px;
+      -webkit-transform: rotate(-315deg);
+      -moz-transform: rotate(-315deg);
+      transform: rotate(-315deg);
+  }
+  /* #global-nav スライドアニメーション */
+  .open #global-nav {
+      /* #global-nav top + #mobile-head height */
+      transform: translateY(100vh);
+  }
+
+  /*サブタイトル*/
+  #global-nav .sub_title{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: rgb(92, 92, 92);
+    display: block;
+    line-height: 8px;
+  }
+}
+
+/*large*/
+@media screen and (max-width: 991px) {
+  .content2{
+    padding-top: 5px;
+  }
+  /*-----------------
+  Reserve
+  -----------------*/
+  .content2, .content2-1, .content2-2{
+    position: static;
+  }
+}
+
+/*携帯サイズ*/
+@media screen and (max-width: 575px) {
+  /*-----------------
+   共通
+  -----------------*/
+  /*文字サイズを小さくする*/
+  .char{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+    font-size: 150%;
+    text-align: center;
+    width: 90%;
+  }
+
+  /*動画*/
+  #player{
+    border-radius: 20px;
+    width: auto;
+    height: 300%;
+    background-color: #fff;
+  }
+
+  .content4 .char{
+    font-size: 100%;
+  }
+
+  .brand img{
+    width: 50%;
+  }
+  .about{
+    margin-left: 10%;
+  }
+
+  .reserve .pcimg{
+    display: none;
+  }
+  .reserve .spimg{
+    display: block;
+  }
+
+/*-----------------
+お問い合わせ・こだわり
+-------------------*/
+  .content5 .cont_last{
+    height: 80px;
+  }
+  
+  .content5 p{
+    line-height: 80px;
+  }
+}
+
+_:-ms-lang(x)::-ms-backdrop, .content2-1 {
+	 position: static;
+}
+
+_:-ms-lang(x)::-ms-backdrop, .content2-2 {
+	 position: static;
+}
